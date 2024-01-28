@@ -1,3 +1,4 @@
+require('dotenv').config();
 const Responses = require('../responses');
 const nodemailer = require('nodemailer');
 const formattedDate = new Date().toLocaleString('en-US', { timeZone: 'Asia/Jerusalem' });
