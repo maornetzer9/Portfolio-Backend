@@ -27,7 +27,7 @@ app.use('/email', emailRouter);
 app.get("/", (req, res) => {
     try
     {
-        const indexPath = path.resolve(__dirname, "../index.html");
+        const indexPath = path.resolve(__dirname, "../");
         res.sendFile(indexPath);
     }
     catch(err)
