@@ -25,8 +25,15 @@ app.use('/email', emailRouter);
 
 
 app.get("/", (req, res) => {
-    const indexPath = path.resolve(__dirname, "../index.html");
-    res.sendFile(indexPath);
+    try
+    {
+        const indexPath = path.resolve(__dirname, "../index.html");
+        res.sendFile(indexPath);
+    }
+    catch(err)
+    {
+        console.error('Cannot Load Home Page...', err);
+    }
 });
 
 
