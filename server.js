@@ -1,17 +1,19 @@
 require('dotenv').config();
 const express = require("express");
 const path = require("path");
+const cors = require('cors');
 const bodyParser = require("body-parser");
 const { emailRouter } = require('./routes/sendEmail');
 
 const app = express();
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3000;
 
 const assetsPath = path.resolve(__dirname, "../assets");
 const imagesPath = path.resolve(__dirname, "../images");
 const videosPath = path.resolve(__dirname, "../videos");
 const frontendPath = path.resolve(__dirname, "../Portfolio-Frontend");
 
+app.use(cors());
 app.use(express.static(assetsPath));
 app.use(express.static(imagesPath));
 app.use(express.static(videosPath));
