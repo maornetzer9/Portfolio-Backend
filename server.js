@@ -13,7 +13,9 @@ const imagesPath = path.resolve(__dirname, "../images");
 const videosPath = path.resolve(__dirname, "../videos");
 const frontendPath = path.resolve(__dirname, "../Portfolio-Frontend");
 
-app.use(cors());
+const corsOptions = { origin: process.env.ORIGIN }
+
+app.use(cors(corsOptions)); 
 app.use(express.static(assetsPath));
 app.use(express.static(imagesPath));
 app.use(express.static(videosPath));

@@ -13,12 +13,6 @@ const transporter = nodemailer.createTransport({
     },
 });
 
-// transporter.verify((err, success) => {
-    //     if(err)  return console.log(err);
-    
-    //     return console.info({email_connected: success})
-    // })
-    
 class SendEmailService {
 
     constructor() 
